@@ -1,0 +1,60 @@
+# PyTorch с CUDA
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.7.1+cu118
+torchaudio==2.7.1+cu118
+
+# Transformers
+transformers==4.57.0
+accelerate==1.10.1
+
+# FastAPI
+fastapi==0.118.0
+uvicorn==0.37.0
+pydantic==2.11.9
+python-multipart==0.0.20
+aiohttp==3.12.15
+aiofiles==24.1.0
+
+# Обработка аудио
+soundfile==0.12.1
+librosa==0.11.0
+
+# Научные вычисления
+numpy==1.26.4
+scipy==1.16.2
+
+# NLP библиотеки (Dostoevsky вызывается как HTTP-сервис — python-пакет не требуется)
+razdel==0.5.0
+nltk==3.9.2
+
+# Эмоциональный анализ
+aniemore==1.2.2
+
+# Утилиты
+loguru==0.7.3
+requests==2.32.5
+
+# Synced from venv on 2025-10-20 (pinned from venv)
+datasets==2.14.7
+tokenizers==0.22.1
+safetensors==0.6.2
+pandas==2.3.3
+pyarrow==21.0.0
+pyarrow-hotfix==0.7
+xxhash==3.6.0
+multiprocess==0.70.15
+dill==0.3.7
+huggingface-hub==0.35.3
+tqdm==4.67.1
+starlette==0.48.0
+anyio==4.11.0
+h11==0.16.0
+typing-extensions==4.12.2
+typing-inspection==0.4.2
+idna==3.10
+charset-normalizer==3.4.3
+urllib3==2.5.0
+regex==2025.9.18
+soxr==1.0.0
+numba==0.62.1
+llvmlite==0.45.1
