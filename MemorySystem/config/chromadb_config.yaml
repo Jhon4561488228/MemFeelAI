@@ -1,0 +1,29 @@
+# Конфигурация ChromaDB для AIRI Memory System
+path: "./data/chromadb"
+collection_name: "airi_memories"
+distance_metric: "cosine"
+
+# Настройки коллекции
+collection_settings:
+  metadata: true
+  embedding_function: "sentence-transformers"
+  
+# Настройки индексации
+indexing:
+  hnsw:
+    space: "cosine"
+    construction_ef: 200
+    m: 16
+    
+# Настройки производительности
+performance:
+  batch_size: 100
+  max_batch_size: 1000
+  cache_size: 10000
+  
+# Настройки очистки
+cleanup:
+  enabled: false  # Отключено для предотвращения потери данных
+  interval_hours: 168  # Раз в неделю (если включено)
+  max_age_days: 1095  # 3 года (если включено)
+  max_memories: 50000  # Увеличено до 50000

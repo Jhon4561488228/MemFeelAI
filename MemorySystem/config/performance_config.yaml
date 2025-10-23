@@ -1,0 +1,44 @@
+# Конфигурация производительности для AIRI Memory System
+
+# Настройки кэширования
+cache_settings:
+  max_size: 50000  # Максимальный размер кэша эмбеддингов
+  ttl_hours: 24    # Время жизни кэша в часах
+  cleanup_interval: 3600  # Интервал очистки кэша в секундах
+
+# Настройки батчевой обработки
+batch_settings:
+  embedding_batch_size: 64    # Размер батча для эмбеддингов
+  search_batch_size: 32       # Размер батча для поиска
+  memory_batch_size: 100      # Размер батча для добавления воспоминаний
+  max_concurrent_requests: 10 # Максимальное количество одновременных запросов
+
+# Настройки поиска
+search_settings:
+  default_limit: 10           # Лимит результатов по умолчанию
+  max_limit: 100             # Максимальный лимит результатов
+  similarity_threshold: 0.1   # Порог схожести по умолчанию
+  search_timeout: 5.0        # Таймаут поиска в секундах
+  prefilter_multiplier: 3    # Множитель для предварительной фильтрации
+
+# Настройки памяти
+memory_settings:
+  max_memories_per_user: 10000  # Максимальное количество воспоминаний на пользователя
+  cleanup_threshold: 0.8        # Порог для очистки старых воспоминаний
+  retention_days: 365          # Время хранения воспоминаний в днях
+  compression_enabled: true    # Включить сжатие метаданных
+
+# Настройки оптимизации
+optimization:
+  enable_indexing: true        # Включить индексацию
+  enable_compression: true     # Включить сжатие
+  enable_caching: true         # Включить кэширование
+  enable_batching: true        # Включить батчевую обработку
+  enable_prefetching: true     # Включить предзагрузку
+
+# Настройки мониторинга
+monitoring:
+  enable_metrics: true         # Включить сбор метрик
+  metrics_interval: 60         # Интервал сбора метрик в секундах
+  enable_profiling: false      # Включить профилирование (только для отладки)
+  log_performance: true        # Логировать производительность

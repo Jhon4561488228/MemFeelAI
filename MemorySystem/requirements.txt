@@ -1,0 +1,92 @@
+# PyTorch с CUDA
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.1.0+cu118
+torchaudio==2.1.0+cu118
+
+# AI/ML экосистема
+chromadb>=0.4.0
+# Явно фиксируем зависимости chromadb, чтобы собрались офлайн-колёса
+pypika==0.48.9
+sentence-transformers>=2.2.2
+transformers==4.35.0
+accelerate==0.24.0
+
+# FastAPI
+fastapi>=0.100.0
+uvicorn>=0.23.0
+pydantic>=2.0.0
+httpx>=0.24.0
+python-multipart>=0.0.9
+
+# Утилиты
+pyyaml>=6.0
+python-dotenv>=1.0.0
+loguru>=0.7.0
+tqdm>=4.65.0
+# redis>=5.0.0  # Убрано - используем SQLite кэширование
+aiohttp>=3.8.0
+aiofiles>=23.0.0
+
+# Data Science с CUDA
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Для совместимости с omegaconf/transformers офлайн
+antlr4-python3-runtime==4.9.3
+
+# OpenAI API
+openai>=1.0.0
+
+# Научные вычисления
+scipy>=1.10.0
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Synced from venv on 2025-10-20 (pinned versions present in venv)
+anyio==4.11.0
+aiohappyeyeballs==2.6.1
+aiosignal==1.4.0
+coloredlogs==15.0.1
+humanfriendly==10.0
+h11==0.16.0
+filelock==3.13.1
+fsspec==2024.6.1
+packaging==25.0
+requests-oauthlib==2.0.0
+orjson==3.11.3
+huggingface-hub==0.17.3
+tokenizers==0.14.1
+safetensors==0.6.2
+onnxruntime==1.23.0
+SQLAlchemy==2.0.43
+qdrant-client==1.15.1
+psutil==7.1.0
+Pillow==11.3.0
+starlette==0.48.0
+google-auth==2.41.1
+googleapis-common-protos==1.70.0
+grpcio==1.75.1
+kubernetes==34.1.0
+protobuf==5.29.5
+jsonschema==4.25.1
+jsonschema-specifications==2025.9.1
+referencing==0.36.2
+rpds-py==0.27.1
+redis==6.4.0
+watchfiles==1.1.0
+websockets==15.0.1
+websocket-client==1.8.0
+typing-extensions==4.12.2
+typing-inspection==0.4.2
+importlib-metadata==8.7.0
+importlib-resources==6.5.2
+Jinja2==3.1.4
+markdown-it-py==4.0.0
+mdurl==0.1.2
+tenacity==9.1.2
+portalocker==3.2.0
+posthog==5.4.0
+mmh3==5.2.0
+yarl==1.20.1
+uvicorn==0.37.0

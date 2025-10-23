@@ -1,0 +1,60 @@
+# Конфигурация Ollama для AIRI Memory System
+
+# Базовый URL OpenAI-совместимого API Ollama
+base_url: "http://localhost:11434/v1"
+
+# Модель по умолчанию (для общего текстогенератора)
+model: "gemma3:4b-it-qat"
+
+# Общие параметры
+max_tokens: 2048
+temperature: 0.7
+timeout: 120
+retry_attempts: 3
+
+# Настройки для разных типов задач
+tasks:
+  text_generation:
+    model: "gemma3:4b-it-qat"
+    max_tokens: 512
+    temperature: 0.7
+  fact_extraction:
+    model: "phi3:mini"
+    max_tokens: 128
+    temperature: 0.1
+  analysis:
+    model: "phi3:mini"
+    max_tokens: 256
+    temperature: 0.0
+  summarization:
+    model: "phi3:mini"
+    max_tokens: 200
+    temperature: 0.2
+  embedding:
+    model: "nomic-embed-text:latest"
+    max_tokens: 0
+    temperature: 0.0
+  image_analysis:
+    model: "gemma3:4b-it-qat"
+    max_tokens: 256
+    temperature: 0.2
+  unified_processing:
+    model: "phi3:mini"
+    max_tokens: 300
+    temperature: 0.3
+
+# Параметры подключения/ретраев
+connection:
+  timeout: 120
+  retry_attempts: 3
+  retry_delay: 1.0
+  max_retry_delay: 10.0
+
+## старая конфигурация удалена — см. актуальные параметры выше
+
+# Настройки для предотвращения отключений
+stability:
+  keep_alive: true
+  max_content_length: 4000  # Максимальная длина контента
+  chunk_large_content: true  # Разбивать большие контенты на части
+  fallback_on_error: true  # Использовать fallback при ошибках

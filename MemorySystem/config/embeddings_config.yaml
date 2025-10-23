@@ -1,0 +1,27 @@
+# Конфигурация эмбеддингов для AIRI Memory System
+model: "distiluse-base-multilingual-cased"  # Мультиязычная модель для русского языка (118MB)
+# model: "all-MiniLM-L6-v2"  # Быстрая модель (22MB) - только английский
+# model: "all-mpnet-base-v2"  # Качественная модель (420MB) - только английский
+
+cache_dir: "./data/embeddings_cache"
+device: "cpu"  # или "cuda"
+batch_size: 32
+max_length: 512
+
+# Настройки кэширования
+cache_settings:
+  enabled: true
+  max_size: 10000
+  ttl_hours: 24
+  
+# Настройки производительности
+performance:
+  batch_processing: true
+  parallel_processing: false
+  memory_efficient: true
+  
+# Настройки модели
+model_settings:
+  normalize_embeddings: true
+  convert_to_numpy: true
+  show_progress_bar: true

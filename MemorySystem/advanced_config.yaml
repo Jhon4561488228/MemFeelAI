@@ -1,0 +1,323 @@
+# MemorySystem Advanced Configuration
+# Продвинутые настройки для Memory System
+
+# ============================================================================
+# ОСНОВНЫЕ НАСТРОЙКИ
+# ============================================================================
+service:
+  name: "MemorySystem"
+  version: "1.0.0"
+  host: "127.0.0.1"
+  port: 8005
+  workers: 2
+  timeout: 60
+  max_requests: 1000
+
+# ============================================================================
+# НАСТРОЙКИ ПАМЯТИ
+# ============================================================================
+memory:
+  # Размеры буферов
+  buffer_sizes:
+    sensor: 1000
+    working: 2000
+    short_term: 5000
+    episodic: 10000
+    semantic: 50000
+    graph: 20000
+    procedural: 10000
+
+  # Веса поиска
+  search_weights:
+    sensor: 0.35
+    working: 0.25
+    short_term: 0.20
+    episodic: 0.10
+    semantic: 0.05
+    graph: 0.03
+    procedural: 0.02
+
+  # Кэширование
+  cache:
+    enabled: true
+    max_size_mb: 1024
+    ttl_seconds: 3600
+    cleanup_interval: 300
+    cache_embeddings: true
+    cache_search_results: true
+    cache_consolidation_results: true
+
+  # Автоматическая очистка
+  auto_cleanup:
+    enabled: true
+    interval_minutes: 30
+    max_age_days: 30
+    max_memories_per_user: 10000
+    cleanup_duplicates: true
+    cleanup_low_importance: true
+    importance_threshold: 0.3
+
+  # Консолидация памяти
+  consolidation:
+    enabled: true
+    interval_minutes: 60
+    batch_size: 100
+    similarity_threshold: 0.8
+    importance_threshold: 0.5
+    enable_semantic_consolidation: true
+    enable_episodic_consolidation: true
+
+# ============================================================================
+# НАСТРОЙКИ БАЗЫ ДАННЫХ
+# ============================================================================
+database:
+  # SQLite
+  sqlite:
+    path: "C:\\AIRI\\data\\memory_system.db"
+    pool_size: 10
+    timeout: 30
+    enable_wal: true
+    enable_foreign_keys: true
+    enable_optimize: true
+    backup_enabled: true
+    backup_interval_hours: 24
+    max_backups: 7
+
+  # ChromaDB
+  chromadb:
+    path: "C:\\AIRI\\data\\chroma_db"
+    collection_name: "airi_memory"
+    embedding_model: "all-MiniLM-L6-v2"
+    distance_metric: "cosine"
+    enable_persistence: true
+    enable_compression: true
+    max_collection_size: 1000000
+
+# ============================================================================
+# НАСТРОЙКИ LLM
+# ============================================================================
+llm:
+  provider: "lm_studio"
+  base_url: "http://127.0.0.1:11434"
+  model: "gemma3-4b-it-qat"
+  timeout: 90
+  max_tokens: 4096
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 50
+  repetition_penalty: 1.1
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+
+  # Оптимизация
+  optimization:
+    cpu_mode: true
+    batch_size: 1
+    context_length: 4096
+    max_concurrent_requests: 2
+    enable_caching: true
+    cache_size_mb: 512
+    cache_ttl_seconds: 7200
+    cleanup_interval: 600
+
+# ============================================================================
+# НАСТРОЙКИ ЭМОЦИЙ
+# ============================================================================
+emotions:
+  # Анализ эмоций
+  analysis:
+    enabled: true
+    confidence_threshold: 0.3
+    enable_secondary_emotions: true
+    enable_emotion_combination: true
+    combination_weights:
+      voice: 0.6
+      text: 0.4
+    enable_consistency_check: true
+    consistency_threshold: 0.7
+
+  # Модели эмоций
+  models:
+    voice:
+      name: "aniemore/aniemore-ser"
+      device: "cuda"
+      precision: "float16"
+      batch_size: 1
+    text:
+      name: "aniemore/aniemore-text-emotion"
+      device: "cuda"
+      precision: "float16"
+      batch_size: 4
+    dostoevsky:
+      name: "fasttext-social-network-model"
+      device: "cpu"
+      precision: "float32"
+
+# ============================================================================
+# НАСТРОЙКИ МОНИТОРИНГА
+# ============================================================================
+monitoring:
+  enabled: true
+
+  # Метрики
+  metrics:
+    collection_interval: 60
+    retention_days: 7
+    track_memory_usage: true
+    track_search_performance: true
+    track_consolidation_performance: true
+    track_emotion_analysis_performance: true
+
+  # Алерты
+  alerts:
+    memory_usage_threshold: 0.9
+    response_time_threshold: 5.0
+    error_rate_threshold: 0.05
+    search_time_threshold: 2.0
+    consolidation_time_threshold: 10.0
+
+  # Логирование
+  logging:
+    level: "INFO"
+    format: "json"
+    file_path: "C:\\AIRI\\logs\\memory_system.log"
+    max_size_mb: 100
+    backup_count: 5
+    enable_console: true
+    enable_file: true
+
+# ============================================================================
+# НАСТРОЙКИ ПРОИЗВОДИТЕЛЬНОСТИ
+# ============================================================================
+performance:
+  # Параллельная обработка
+  parallel_processing:
+    enabled: true
+    max_workers: 4
+    max_concurrent_searches: 8
+    max_concurrent_consolidations: 2
+    max_concurrent_emotion_analysis: 4
+
+  # Оптимизация памяти
+  memory_optimization:
+    enable_gc: true
+    gc_threshold: 0.8
+    enable_memory_pooling: true
+    pool_size_mb: 512
+    enable_compression: true
+    compression_level: 6
+
+  # Оптимизация поиска
+  search_optimization:
+    enable_indexing: true
+    enable_caching: true
+    enable_batch_processing: true
+    batch_size: 100
+    enable_streaming: true
+
+  # Таймауты
+  timeouts:
+    search: 15
+    consolidation: 60
+    emotion_analysis: 45
+    llm_request: 90
+    database_operation: 30
+
+# ============================================================================
+# НАСТРОЙКИ БЕЗОПАСНОСТИ
+# ============================================================================
+security:
+  # API ключи
+  api_keys:
+    enabled: true
+    required: false
+    key_length: 32
+    rotation_days: 90
+
+  # Rate limiting
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 100
+    burst_size: 20
+    window_seconds: 60
+
+  # CORS
+  cors:
+    enabled: true
+    origins: ["http://localhost:3000", "http://127.0.0.1:3000"]
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    headers: ["Content-Type", "Authorization"]
+    credentials: true
+
+  # Валидация данных
+  validation:
+    enabled: true
+    max_text_length: 10000
+    max_audio_size_mb: 100
+    max_image_size_mb: 50
+    enable_sanitization: true
+    enable_encoding_validation: true
+
+# ============================================================================
+# НАСТРОЙКИ КЭШИРОВАНИЯ
+# ============================================================================
+caching:
+  # Общие настройки
+  enabled: true
+  default_ttl: 3600
+  max_size_mb: 1024
+  cleanup_interval: 300
+
+  # Кэширование по типам
+  types:
+    search_results:
+      enabled: true
+      ttl: 1800
+      max_size_mb: 512
+    embeddings:
+      enabled: true
+      ttl: 7200
+      max_size_mb: 1024
+    emotion_analysis:
+      enabled: true
+      ttl: 3600
+      max_size_mb: 256
+    consolidation_results:
+      enabled: true
+      ttl: 14400
+      max_size_mb: 256
+    llm_responses:
+      enabled: true
+      ttl: 3600
+      max_size_mb: 512
+
+# ============================================================================
+# НАСТРОЙКИ ЛОГИРОВАНИЯ
+# ============================================================================
+logging:
+  # Общие настройки
+  level: "INFO"
+  format: "json"
+  enable_console: true
+  enable_file: true
+  enable_rotation: true
+
+  # Файлы логов
+  files:
+    main: "C:\\AIRI\\logs\\memory_system.log"
+    errors: "C:\\AIRI\\logs\\memory_system_errors.log"
+    performance: "C:\\AIRI\\logs\\memory_system_performance.log"
+    security: "C:\\AIRI\\logs\\memory_system_security.log"
+
+  # Ротация логов
+  rotation:
+    max_size_mb: 100
+    backup_count: 5
+    compress: true
+
+  # Фильтрация
+  filters:
+    enable_sensitive_data_filter: true
+    enable_pii_filter: true
+    enable_credit_card_filter: true
+    enable_ssn_filter: true

@@ -1,0 +1,36 @@
+# Конфигурация Mem0 для AIRI Memory System
+llm:
+  provider: "lm_studio"
+  config:
+    base_url: "http://localhost:1234/v1"
+    model: "local-model"
+    max_tokens: 2048
+    temperature: 0.7
+
+embedder:
+  provider: "sentence_transformers"
+  config:
+    model: "distiluse-base-multilingual-cased"
+    cache_dir: "./data/embeddings_cache"
+    device: "cpu"  # или "cuda" если есть GPU
+
+vector_store:
+  provider: "chromadb"
+  config:
+    path: "./data/chromadb"
+    collection_name: "airi_memories"
+    distance_metric: "cosine"
+
+# Настройки памяти
+memory_settings:
+  max_memories: 50000  # Увеличено с 10000 до 50000
+  cleanup_threshold: 0.95  # Увеличено с 0.8 до 0.95 (более консервативно)
+  similarity_threshold: 0.2  # Оптимальное значение для русских текстов
+  retention_days: 1095  # Увеличено с 365 до 3 лет
+  
+# Настройки обработки
+processing:
+  batch_size: 32
+  max_length: 512
+  chunk_size: 1000
+  overlap: 200

@@ -1,0 +1,215 @@
+{
+  "export_timestamp": "2025-10-14T11:49:24.582140",
+  "metrics": [
+    {
+      "user_id": "test_user_1",
+      "experiment_id": "search_strategies_v1",
+      "variant_name": "control",
+      "query": "test query 1",
+      "search_type": "hybrid_search",
+      "response_time_ms": 100.0,
+      "results_count": 5,
+      "clicked_results": [
+        "result_0"
+      ],
+      "satisfaction_score": 0.7,
+      "timestamp": "2025-10-14T11:49:07.501203"
+    },
+    {
+      "user_id": "test_user_2",
+      "experiment_id": "search_strategies_v1",
+      "variant_name": "variant_a",
+      "query": "test query 2",
+      "search_type": "hybrid_search",
+      "response_time_ms": 110.0,
+      "results_count": 6,
+      "clicked_results": [
+        "result_1"
+      ],
+      "satisfaction_score": 0.75,
+      "timestamp": "2025-10-14T11:49:07.501203"
+    },
+    {
+      "user_id": "test_user_3",
+      "experiment_id": "search_strategies_v1",
+      "variant_name": "variant_b",
+      "query": "test query 3",
+      "search_type": "hybrid_search",
+      "response_time_ms": 120.0,
+      "results_count": 7,
+      "clicked_results": [
+        "result_2"
+      ],
+      "satisfaction_score": 0.7999999999999999,
+      "timestamp": "2025-10-14T11:49:07.501203"
+    },
+    {
+      "user_id": "test_user_4",
+      "experiment_id": "search_strategies_v1",
+      "variant_name": "control",
+      "query": "test query 4",
+      "search_type": "hybrid_search",
+      "response_time_ms": 130.0,
+      "results_count": 8,
+      "clicked_results": [
+        "result_3"
+      ],
+      "satisfaction_score": 0.85,
+      "timestamp": "2025-10-14T11:49:07.501203"
+    },
+    {
+      "user_id": "test_user_5",
+      "experiment_id": "search_strategies_v1",
+      "variant_name": "variant_a",
+      "query": "test query 5",
+      "search_type": "hybrid_search",
+      "response_time_ms": 140.0,
+      "results_count": 9,
+      "clicked_results": [
+        "result_4"
+      ],
+      "satisfaction_score": 0.8999999999999999,
+      "timestamp": "2025-10-14T11:49:07.501203"
+    }
+  ],
+  "experiment_metrics": {
+    "search_strategies_v1": {
+      "control": {
+        "total_queries": 2,
+        "avg_response_time_ms": 115.0,
+        "avg_results_count": 6.5,
+        "click_through_rate": 1.0,
+        "satisfaction_score": 0.7749999999999999,
+        "error_rate": 0.0
+      },
+      "variant_a": {
+        "total_queries": 2,
+        "avg_response_time_ms": 125.0,
+        "avg_results_count": 7.5,
+        "click_through_rate": 1.0,
+        "satisfaction_score": 0.825,
+        "error_rate": 0.0
+      },
+      "variant_b": {
+        "total_queries": 1,
+        "avg_response_time_ms": 120.0,
+        "avg_results_count": 7.0,
+        "click_through_rate": 1.0,
+        "satisfaction_score": 0.7999999999999999,
+        "error_rate": 0.0
+      }
+    }
+  },
+  "dashboard_data": {
+    "experiment_id": "search_strategies_v1",
+    "traffic_stats": {
+      "experiment_id": "search_strategies_v1",
+      "experiment_name": "Search Strategies Comparison",
+      "is_active": true,
+      "total_users": 0,
+      "variant_distribution": {
+        "hybrid_search": 0,
+        "contextual_search": 0,
+        "graph_search": 0
+      },
+      "variant_percentages": {
+        "hybrid_search": 0,
+        "contextual_search": 0,
+        "graph_search": 0
+      }
+    },
+    "variant_metrics": {
+      "control": {
+        "total_queries": 2,
+        "avg_response_time_ms": 115.0,
+        "avg_results_count": 6.5,
+        "click_through_rate": 1.0,
+        "satisfaction_score": 0.7749999999999999,
+        "error_rate": 0.0
+      },
+      "variant_a": {
+        "total_queries": 2,
+        "avg_response_time_ms": 125.0,
+        "avg_results_count": 7.5,
+        "click_through_rate": 1.0,
+        "satisfaction_score": 0.825,
+        "error_rate": 0.0
+      },
+      "variant_b": {
+        "total_queries": 1,
+        "avg_response_time_ms": 120.0,
+        "avg_results_count": 7.0,
+        "click_through_rate": 1.0,
+        "satisfaction_score": 0.7999999999999999,
+        "error_rate": 0.0
+      }
+    },
+    "analysis": {
+      "total_users": 15,
+      "duration_days": 7.0,
+      "winner_variant": null,
+      "confidence_level": 0.95,
+      "recommendations": [
+        "Статистически значимых различий не обнаружено",
+        "Рекомендуется увеличить размер выборки или продолжить эксперимент"
+      ],
+      "statistical_tests": [
+        {
+          "metric_name": "response_time_ms",
+          "variant_a": "control",
+          "variant_b": "variant_a",
+          "value_a": 115.0,
+          "value_b": 125.0,
+          "p_value": 0.7685677325865623,
+          "is_significant": false,
+          "effect_size": 0.4714045207910317,
+          "test_type": "t_test"
+        },
+        {
+          "metric_name": "results_count",
+          "variant_a": "control",
+          "variant_b": "variant_a",
+          "value_a": 6.5,
+          "value_b": 7.5,
+          "p_value": 0.7685677325865621,
+          "is_significant": false,
+          "effect_size": 0.47140452079103173,
+          "test_type": "t_test"
+        },
+        {
+          "metric_name": "click_through_rate",
+          "variant_a": "control",
+          "variant_b": "variant_a",
+          "value_a": 1.0,
+          "value_b": 1.0,
+          "p_value": 1.0,
+          "is_significant": false,
+          "effect_size": 0.0,
+          "test_type": "z_test_proportions"
+        },
+        {
+          "metric_name": "satisfaction_score",
+          "variant_a": "control",
+          "variant_b": "variant_a",
+          "value_a": 0.7749999999999999,
+          "value_b": 0.825,
+          "p_value": 0.7685677325865621,
+          "is_significant": false,
+          "effect_size": 0.4714045207910322,
+          "test_type": "t_test"
+        },
+        {
+          "metric_name": "error_rate",
+          "variant_a": "control",
+          "variant_b": "variant_a",
+          "value_a": 0.0,
+          "value_b": 0.0,
+          "p_value": 1.0,
+          "is_significant": false,
+          "effect_size": 0.0,
+          "test_type": "z_test_proportions"
+        }
+      ]
+    }
+  }
+}

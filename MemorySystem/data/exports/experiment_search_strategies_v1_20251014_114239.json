@@ -1,0 +1,26 @@
+{
+  "export_timestamp": "2025-10-14T11:42:39.613767",
+  "metrics": [],
+  "experiment_metrics": {},
+  "dashboard_data": {
+    "experiment_id": "search_strategies_v1",
+    "traffic_stats": {
+      "experiment_id": "search_strategies_v1",
+      "experiment_name": "Search Strategies Comparison",
+      "is_active": true,
+      "total_users": 0,
+      "variant_distribution": {
+        "hybrid_search": 0,
+        "contextual_search": 0,
+        "graph_search": 0
+      },
+      "variant_percentages": {
+        "hybrid_search": 0,
+        "contextual_search": 0,
+        "graph_search": 0
+      }
+    },
+    "variant_metrics": {},
+    "analysis": null
+  }
+}
