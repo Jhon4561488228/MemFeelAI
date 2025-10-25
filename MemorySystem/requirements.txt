@@ -1,15 +1,15 @@
-# PyTorch с CUDA
---extra-index-url https://download.pytorch.org/whl/cu118
-torch==2.1.0+cu118
-torchaudio==2.1.0+cu118
+# PyTorch с CUDA 13.0
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.9.0+cu130
+torchaudio==2.9.0+cu130
 
 # AI/ML экосистема
 chromadb>=0.4.0
 # Явно фиксируем зависимости chromadb, чтобы собрались офлайн-колёса
 pypika==0.48.9
 sentence-transformers>=2.2.2
-transformers==4.35.0
-accelerate==0.24.0
+transformers==4.57.1
+accelerate==1.10.1
 
 # FastAPI
 fastapi>=0.100.0
@@ -26,6 +26,7 @@ tqdm>=4.65.0
 # redis>=5.0.0  # Убрано - используем SQLite кэширование
 aiohttp>=3.8.0
 aiofiles>=23.0.0
+json-repair>=0.7.0
 
 # Data Science с CUDA
 numpy>=1.24.0
